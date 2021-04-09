@@ -1,0 +1,10 @@
+C:\Users\Korisnik\Source\Repos\PhotomathDesktop\PhotomathDesktop\obj\Debug\PhotomathDesktop.csprojAssemblyReference.cache
+C:\Users\Korisnik\Source\Repos\PhotomathDesktop\PhotomathDesktop\obj\Debug\PhotomathDesktop.Form1.resources
+C:\Users\Korisnik\Source\Repos\PhotomathDesktop\PhotomathDesktop\obj\Debug\PhotomathDesktop.Properties.Resources.resources
+C:\Users\Korisnik\Source\Repos\PhotomathDesktop\PhotomathDesktop\obj\Debug\PhotomathDesktop.csproj.GenerateResource.cache
+C:\Users\Korisnik\Source\Repos\PhotomathDesktop\PhotomathDesktop\obj\Debug\PhotomathDesktop.csproj.CoreCompileInputs.cache
+C:\Users\Korisnik\Source\Repos\PhotomathDesktop\PhotomathDesktop\bin\Debug\PhotomathDesktop.exe.config
+C:\Users\Korisnik\Source\Repos\PhotomathDesktop\PhotomathDesktop\bin\Debug\PhotomathDesktop.exe
+C:\Users\Korisnik\Source\Repos\PhotomathDesktop\PhotomathDesktop\bin\Debug\PhotomathDesktop.pdb
+C:\Users\Korisnik\Source\Repos\PhotomathDesktop\PhotomathDesktop\obj\Debug\PhotomathDesktop.exe
+C:\Users\Korisnik\Source\Repos\PhotomathDesktop\PhotomathDesktop\obj\Debug\PhotomathDesktop.pdb
