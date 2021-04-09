@@ -15,6 +15,7 @@ namespace PhotomathDesktop
         public Form1()
         {
             InitializeComponent();
+            //bla
         }
     }
 }
