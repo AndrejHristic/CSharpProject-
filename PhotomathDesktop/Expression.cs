@@ -4,10 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StekRacunanjeIzraza
+namespace PhotomathDesktop
 {
     class Expression
     {
+        private string i;
+
+        public string I
+        {
+            get { return i; }
+            set { i = value; }
+        }
+        public Expression(string i)
+        {
+            this.i = i;
+        }
         public static bool UporediOperatore(char x, char y)//> (da li je x bitnije)
         {
             if (x == '+' || x == '-')
@@ -44,8 +55,9 @@ namespace StekRacunanjeIzraza
                 }
             }
         }
-        public static string InfiksUPostfiks(string x)
+        public string InfiksUPostfiks()
         {
+            string x = this.i;
             Stack<char> stek = new Stack<char>();
             char[] izraz = x.ToCharArray();
             List<char> pizraz = new List<char>();
@@ -111,7 +123,7 @@ namespace StekRacunanjeIzraza
             }
             return pom;
         }
-        public static int RešiPostfiks(string x)
+        public int RešiPostfiks(string x)
         {
             Stack<int> stek = new Stack<int>();
             char[] izraz = x.ToCharArray();

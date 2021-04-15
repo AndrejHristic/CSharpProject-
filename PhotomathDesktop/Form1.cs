@@ -15,7 +15,11 @@ namespace PhotomathDesktop
         public Form1()
         {
             InitializeComponent();
-            //bla
+        }
+        private void btnracunaj_Click(object sender, EventArgs e)
+        {
+            Expression str = new Expression(tbunos.Text);
+            lblispis.Text = str.RešiPostfiks(str.InfiksUPostfiks()).ToString();
         }
     }
 }
