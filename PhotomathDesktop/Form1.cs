@@ -20,6 +20,9 @@ namespace PhotomathDesktop
         {
             Expression str = new Expression(tbunos.Text);
             lblispis.Text = str.RešiPostfiks(str.InfiksUPostfiks()).ToString();
+            //proveravac ((4+3*4*53-3)*2-5-3)*3*2+1/2+2*(3-1)-2*2+16-4*3
+
+            //lblispis.Text = str.IzracunajJednacinu();
         }
     }
 }
