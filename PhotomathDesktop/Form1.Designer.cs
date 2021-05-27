@@ -1,6 +1,6 @@
 ﻿namespace PhotomathDesktop
 {
-    partial class Form1
+    partial class MathForma
     {
         /// <summary>
         /// Required designer variable.
@@ -33,6 +33,7 @@
             this.lbl1 = new System.Windows.Forms.Label();
             this.tbunos = new System.Windows.Forms.TextBox();
             this.btnracunaj = new System.Windows.Forms.Button();
+            this.FLP = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,16 +83,28 @@
             this.btnracunaj.UseVisualStyleBackColor = true;
             this.btnracunaj.Click += new System.EventHandler(this.btnracunaj_Click);
             // 
-            // Form1
+            // FLP
+            // 
+            this.FLP.AutoScroll = true;
+            this.FLP.AutoScrollMinSize = new System.Drawing.Size(20, 20);
+            this.FLP.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.FLP.Location = new System.Drawing.Point(339, 52);
+            this.FLP.Name = "FLP";
+            this.FLP.Size = new System.Drawing.Size(289, 449);
+            this.FLP.TabIndex = 5;
+            this.FLP.WrapContents = false;
+            // 
+            // MathForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(640, 637);
+            this.Controls.Add(this.FLP);
             this.Controls.Add(this.btnracunaj);
             this.Controls.Add(this.tbunos);
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.panel1);
-            this.Name = "Form1";
+            this.Name = "MathForma";
             this.Text = "PhotomathD";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -107,6 +120,7 @@
         private System.Windows.Forms.TextBox tbunos;
         private System.Windows.Forms.Label lblispis;
         private System.Windows.Forms.Button btnracunaj;
+        private System.Windows.Forms.FlowLayoutPanel FLP;
     }
 }
 

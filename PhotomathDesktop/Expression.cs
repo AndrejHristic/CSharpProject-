@@ -250,7 +250,12 @@ namespace PhotomathDesktop
             Console.WriteLine();
             return Convert.ToInt32(stek.Pop().ToString());
         }
-        public string IzracunajJednacinu()
+        public override string ToString()
+        {
+            return i;
+        }
+
+        /*public string IzracunajJednacinu()
         {
             char[] jednacina = this.i.ToCharArray();
             List<Celina> levaStrana = new List<Celina>();// nepoznate
@@ -432,6 +437,6 @@ namespace PhotomathDesktop
 
 
             return "";
-        }
+        }*/
     }
 }
