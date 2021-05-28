@@ -119,6 +119,15 @@ namespace PhotomathDesktop
                         stek.Push(izraz[i]);
                     }
                 }
+                else if(izraz[i]==' ')
+                {
+                    i++;
+                    continue;
+                }
+                else
+                {
+                    return null;
+                }
                 i++;
             }
             while (stek.Count != 0)
@@ -143,6 +152,7 @@ namespace PhotomathDesktop
             {
                 if (izraz[i] >= '0' && izraz[i] <= '9')
                 {
+                    Console.WriteLine(izraz[i]);
                     if (izraz.Length - 1 != i && izraz[i + 1] >= '0' && izraz[i + 1] <= '9')
                     {
                         pizraz.Add(izraz[i]);
@@ -187,6 +197,11 @@ namespace PhotomathDesktop
                         stek.Push(izraz[i]);
                     }
                 }
+                else
+                {
+                    Console.WriteLine("evo me");
+                    return null;
+                }
                 i++;
             }
             while (stek.Count != 0)
@@ -200,55 +215,78 @@ namespace PhotomathDesktop
             }
             return pom;
         }
-        public int RešiPostfiks(string x)
+        public int RešiPostfiks(string x, out string izlazak)
         {
-            Stack<int> stek = new Stack<int>();
-            char[] izraz = x.ToCharArray();
-            int i = 0;
-            string broj = "";
-            while (i < izraz.Length)
+            try
             {
-                if (izraz[i] >= '0' && izraz[i] <= '9')
+                if (x is null)
                 {
-                    if (izraz.Length - 1 != i && izraz[i + 1] >= '0' && izraz[i + 1] <= '9')
+                    throw new Exception("nevalidan izraz");
+                }
+                Stack<int> stek = new Stack<int>();
+                char[] izraz = x.ToCharArray();
+                int i = 0;
+                string broj = "";
+                while (i < izraz.Length)
+                {
+                    if (izraz[i] >= '0' && izraz[i] <= '9')
                     {
-                        broj += izraz[i].ToString();
+                        if (izraz.Length - 1 != i && izraz[i + 1] >= '0' && izraz[i + 1] <= '9')
+                        {
+                            broj += izraz[i].ToString();
+                        }
+                        else
+                        {
+                            broj += izraz[i].ToString();
+                            stek.Push(Convert.ToInt32(broj));
+                            broj = "";
+                        }
                     }
-                    else
+                    else if (izraz[i] == '+')
                     {
-                        broj += izraz[i].ToString();
-                        stek.Push(Convert.ToInt32(broj));
-                        broj = "";
+                        int b = stek.Pop();
+                        int a = stek.Pop();
+                        stek.Push(a + b);
                     }
+                    else if (izraz[i] == '-')//prvo b pa jer ako se malo bolje razmisli onaj na vrhu steka je na desnoj strani operacije, a onaj ispod njega na levoj
+                    {
+                        int b = stek.Pop();
+                        int a = stek.Pop();
+                        stek.Push(a - b);
+                    }
+                    else if (izraz[i] == '*')
+                    {
+                        int b = stek.Pop();
+                        int a = stek.Pop();
+                        stek.Push(a * b);
+                    }
+                    else if (izraz[i] == '/')
+                    {
+                        int b = stek.Pop();
+                        int a = stek.Pop();
+                        stek.Push(a / b);
+                    }
+                    i++;
                 }
-                else if (izraz[i] == '+')
+                Console.WriteLine();
+                try
                 {
-                    int b = stek.Pop();
-                    int a = stek.Pop();
-                    stek.Push(a + b);
+                    izlazak = "allright";
+                    return Convert.ToInt32(stek.Pop().ToString());
                 }
-                else if (izraz[i] == '-')//prvo b pa jer ako se malo bolje razmisli onaj na vrhu steka je na desnoj strani operacije, a onaj ispod njega na levoj
+                catch (Exception e)
                 {
-                    int b = stek.Pop();
-                    int a = stek.Pop();
-                    stek.Push(a - b);
+                    izlazak = "error";
+                    Console.WriteLine(e.Message);
+                    return -1;
                 }
-                else if (izraz[i] == '*')
-                {
-                    int b = stek.Pop();
-                    int a = stek.Pop();
-                    stek.Push(a * b);
-                }
-                else if (izraz[i] == '/')
-                {
-                    int b = stek.Pop();
-                    int a = stek.Pop();
-                    stek.Push(a / b);
-                }
-                i++;
             }
-            Console.WriteLine();
-            return Convert.ToInt32(stek.Pop().ToString());
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                izlazak = "error";
+                return -1;
+            }
         }
         public override string ToString()
         {

@@ -34,6 +34,7 @@
             this.tbunos = new System.Windows.Forms.TextBox();
             this.btnracunaj = new System.Windows.Forms.Button();
             this.FLP = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnobriši = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,11 +95,22 @@
             this.FLP.TabIndex = 5;
             this.FLP.WrapContents = false;
             // 
+            // btnobriši
+            // 
+            this.btnobriši.Location = new System.Drawing.Point(339, 9);
+            this.btnobriši.Name = "btnobriši";
+            this.btnobriši.Size = new System.Drawing.Size(163, 28);
+            this.btnobriši.TabIndex = 6;
+            this.btnobriši.Text = "Obriši istoriju";
+            this.btnobriši.UseVisualStyleBackColor = true;
+            this.btnobriši.Click += new System.EventHandler(this.btnobriši_Click);
+            // 
             // MathForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(640, 637);
+            this.Controls.Add(this.btnobriši);
             this.Controls.Add(this.FLP);
             this.Controls.Add(this.btnracunaj);
             this.Controls.Add(this.tbunos);
@@ -121,6 +133,7 @@
         private System.Windows.Forms.Label lblispis;
         private System.Windows.Forms.Button btnracunaj;
         private System.Windows.Forms.FlowLayoutPanel FLP;
+        private System.Windows.Forms.Button btnobriši;
     }
 }
 
